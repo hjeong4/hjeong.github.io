@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Haesung Jeong - Narrative Viz</title>  
+        <link href="css/bootstrap.min.css" rel="stylesheet">  
+    </head>
+
+    <body>
+        <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                <button class="nav-link" id="range-tab" data-bs-toggle="tab" data-bs-target="#range" type="button" role="tab" aria-controls="range" aria-selected="false">Range</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                <button class="nav-link" id="efficiency-tab" data-bs-toggle="tab" data-bs-target="#efficiency" type="button" role="tab" aria-controls="efficiency" aria-selected="false">Efficiency</button>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <div class="container" style="padding-top: 20px; padding-bottom: 30px;">
+                        <h4 align="center">Electric Vehicle Dataset</h4>
+                        <p>
+                            With the increasing demands on Electric Vehicles, car manufacturers make many electric vehicles. This visualization will compare and contrast the different specification of electric vehicles manufactured by different brands.
+                            By using the tabs at the top of the page, we can navigate to different pages that contains different charts.
+                        </p> <br />
+                        <p>
+                            Below chart is the number of electric vehicles manufactured by different companies. The charts on the rest of the page will use the specification of the vehicles maunfactured by companies in the chart below.
+                        </p>
+                    </div>
+                    <h5 align="center" style="padding: 10px 10px 10px 10px">Number of Models by Brands</h5>
+                    <div id="chart-number-brand"></div>
+                </div>
+                <div class="tab-pane" id="range" role="tabpanel" aria-labelledby="range-tab" tabindex="0">
+                    <div class="container-sm" style="padding-top: 20px;">
+                        <h6>Color data points by body type</h6>
+                        <select class="form-select" id="BodyTypeColors">
+                            <option value="all">All</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="hatchback">Hatchback</option>
+                            <option value="liftback">Liftback</option>
+                            <option value="suv">SUV</option>
+                            <option value="pickup">Pickup</option>
+                            <option value="mpv">MPV</option>
+                            <option value="cabrio">Cabrio</option>
+                            <option value="spv">SPV</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h5 align="center" style="padding: 10px 10px 10px 10px">Acc vs Range</h5>
+                            <div id="chart-acc-range"></div>
+                        </div>
+                        <div class="col">
+                            <h5 align="center" style="padding: 20px 10px 10px 10px">Price vs Range</h5>
+                            <div id="chart-price-range"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="efficiency" role="tabpanel" aria-labelledby="efficiency-tab" tabindex="0">
+                    <div class="container-sm" style="padding-top: 20px; padding-bottom: 20px;">
+                        <h6>Color data points by body type</h6>
+                        <select class="form-select" id="BodyTypeColorsEff">
+                            <option value="all">All</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="hatchback">Hatchback</option>
+                            <option value="liftback">Liftback</option>
+                            <option value="suv">SUV</option>
+                            <option value="pickup">Pickup</option>
+                            <option value="mpv">MPV</option>
+                            <option value="cabrio">Cabrio</option>
+                            <option value="spv">SPV</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h5 align="center" style="padding: 10px 10px 10px 10px">Efficiency vs Price</h5>
+                            <div id="chart-eff-price"></div>
+                        </div>
+                        <div class="col">
+                            <h5 align="center" style="padding: 10px 10px 10px 10px">Efficiency vs TopSpeed</h5>
+                            <div id="chart-eff-topSpeed"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/d3-annotation.min.js"></script>
+        <script src="js/d3.v7.min.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
