@@ -86,9 +86,10 @@ function renderEfficiencyChart(data) {
     var efficiencyPrice = d3.select("#chart-eff-price")
         .append("svg")
         .attr("width", 700)
-        .attr("height", 350)
+        .attr("height", 400)
         .append("g")
-        .attr("transform", "translate(60,30)")
+        .attr("transform", "translate(80,30)")
+        .style("padding-left", "10px")
 
     var xScale = d3.scaleLinear()
         .domain([100, 300])
@@ -96,12 +97,23 @@ function renderEfficiencyChart(data) {
     efficiencyPrice.append("g")
         .attr("transform", "translate(0, 300)")
         .call(d3.axisBottom(xScale));
+    efficiencyPrice.append("text")
+        .attr("text-anchor", "end")
+        .attr("x", 600)
+        .attr("y", 350)
+        .text("Efficiency (Wh/km)")
 
     var yScale = d3.scaleLinear()
         .domain([20000, 240000])
         .range([300, 0]);
     efficiencyPrice.append("g")
         .call(d3.axisLeft(yScale));
+    efficiencyPrice.append("text")
+        .attr("text-anchor", "end")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -55)
+        .attr("x", 30)
+        .text("Price (euro)")
 
     efficiencyPrice.append("g")
         .selectAll("circle")
@@ -145,7 +157,7 @@ function renderEfficiencyChart(data) {
     var efficiencyTopSpeed = d3.select("#chart-eff-topSpeed")
         .append("svg")
         .attr("width", 700)
-        .attr("height", 350)
+        .attr("height", 400)
         .append("g")
         .attr("transform", "translate(60,30)")
     
@@ -155,12 +167,23 @@ function renderEfficiencyChart(data) {
     efficiencyTopSpeed.append("g")
         .attr("transform", "translate(0,300)")
         .call(d3.axisBottom(xScale));
+    efficiencyTopSpeed.append("text")
+        .attr("text-anchor", "end")
+        .attr("x", 600)
+        .attr("y", 350)
+        .text("Efficiency (Wh/km)")
     
     var yScale = d3.scaleLinear()
         .domain([100, 420])
         .range([300, 0]);
     efficiencyTopSpeed.append("g")
         .call(d3.axisLeft(yScale));
+    efficiencyTopSpeed.append("text")
+        .attr("text-anchor", "end")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -40)
+        .attr("x", 30)
+        .text("TopSpeed (km/h)")
 
     efficiencyTopSpeed.append("g")
         .selectAll("circle")
@@ -261,7 +284,7 @@ function renderRangeChart(data) {
     var accRangeSvg = d3.select("#chart-acc-range")
         .append("svg")
         .attr("width", 700)
-        .attr("height", 350)
+        .attr("height", 400)
         .append("g")
         .attr("transform", "translate(60, 30)");
 
@@ -271,12 +294,23 @@ function renderRangeChart(data) {
     accRangeSvg.append("g")
         .attr("transform", "translate(0, 300)")
         .call(d3.axisBottom(x1));
+    accRangeSvg.append("text")
+        .attr("text-anchor", "end")
+        .attr("x", 600)
+        .attr("y", 350)
+        .text("Acceleration (sec)")
 
     var y1 = d3.scaleLinear()
         .domain([0,1000])
         .range([300, 0]);
     accRangeSvg.append("g")
         .call(d3.axisLeft(y1));
+    accRangeSvg.append("text")
+        .attr("text-anchor", "end")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -40)
+        .attr("x", 30)
+        .text("Range (km)")
 
     accRangeSvg.append("g")
         .selectAll("circle")
@@ -322,7 +356,7 @@ function renderRangeChart(data) {
     var priceRangeSvg = d3.select("#chart-price-range")
         .append("svg")
         .attr("width", 700)
-        .attr("height", 350)
+        .attr("height", 400)
         .append("g")
         .attr("transform", "translate(60, 30)");
 
@@ -332,12 +366,23 @@ function renderRangeChart(data) {
     priceRangeSvg.append("g")
         .attr("transform", "translate(0, 300)")
         .call(d3.axisBottom(x2));
+    priceRangeSvg.append("text")
+        .attr("text-anchor", "end")
+        .attr("x", 550)
+        .attr("y", 350)
+        .text("Price (euro)");
 
     var y2 = d3.scaleLinear()
         .domain([0,1000])
         .range([300, 0]);
     priceRangeSvg.append("g")
         .call(d3.axisLeft(y2));
+    priceRangeSvg.append("text")
+        .attr("text-anchor", "end")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -40)
+        .attr("x", 30)
+        .text("Range (km)")
 
     priceRangeSvg.append("g")
         .selectAll("circle")
